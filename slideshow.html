@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Her Moments 💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .fade-slide {
+      transition: opacity 0.8s ease;
+    }
+  </style>
+</head>
+
+<body class="bg-black h-screen w-screen overflow-hidden flex items-center justify-center">
+
+  <!-- Full Screen Slideshow Container -->
+  <div class="relative w-full h-full">
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70 z-20"></div>
+
+    <!-- Image -->
+    <img id="slideImg"
+         src="her1.jpeg"
+         class="absolute inset-0 w-full h-full object-cover fade-slide opacity-100 z-10">
+
+    <!-- Text Overlay -->
+    <div class="absolute bottom-10 left-0 right-0 z-30 text-center px-6">
+      <h1 class="text-pink-300 text-3xl font-extrabold drop-shadow-xl">
+        Her Beautiful Moments ✨
+      </h1>
+      <p class="text-white text-sm mt-1 opacity-80">
+        Swipe through the magic you bring 💗
+      </p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="absolute bottom-3 left-0 right-0 flex justify-between px-6 z-30">
+      <button onclick="prev()"
+              class="px-4 py-2 bg-white/20 text-white backdrop-blur-md rounded-full text-sm shadow active:scale-95">
+        ← Prev
+      </button>
+      <button onclick="next()"
+              class="px-4 py-2 bg-white/20 text-white backdrop-blur-md rounded-full text-sm shadow active:scale-95">
+        Next →
+      </button>
+    </div>
+
+    <!-- Back Button -->
+    <a href="index.html" class="absolute top-5 left-5 text-white text-xs underline z-30">
+      ← Back
+    </a>
+
+  </div>
+
+  <script>
+    const photos = [
+      "her1.jpeg",
+      "her2.jpeg",
+      "her3.png",
+      "her4.jpeg",
+      "her5.jpeg",
+      "her6.jpeg",
+      "her7.jpeg"
+    ];
+
+    let index = 0;
+    const img = document.getElementById("slideImg");
+
+    function next() {
+      index = (index + 1) % photos.length;
+      fadeChange();
+    }
+
+    function prev() {
+      index = (index - 1 + photos.length) % photos.length;
+      fadeChange();
+    }
+
+    function fadeChange() {
+      img.classList.add("opacity-0");
+      setTimeout(() => {
+        img.src = photos[index];
+        img.classList.remove("opacity-0");
+      }, 400);
+    }
+  </script>
+
+</body>
+</html>

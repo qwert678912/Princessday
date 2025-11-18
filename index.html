@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Princess Day 👑💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-up {
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .fade { opacity: 0; transition: all 0.5s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-rose-50 via-pink-50 to-purple-100 min-h-screen px-4 py-6 flex justify-center font-sans relative">
+
+  <!-- floating hearts -->
+  <div class="absolute top-0 left-0 w-full pointer-events-none opacity-40">
+    <div class="text-pink-300 text-5xl float absolute left-6">💗</div>
+    <div class="text-pink-400 text-4xl float absolute right-10 mt-16">💞</div>
+    <div class="text-pink-300 text-6xl float absolute left-1/2 mt-32">💖</div>
+  </div>
+
+  <div class="w-full max-w-sm bg-white/80 backdrop-blur-xl p-6 rounded-3xl shadow-2xl fade-up">
+
+    <!-- HEADER -->
+    <div class="text-center">
+      <h1 class="text-4xl font-extrabold text-pink-600 drop-shadow-sm">Princess Day 👑</h1>
+      <p class="text-gray-500 text-sm mt-1">I know I’m late… but never careless about you 💗</p>
+    </div>
+
+    <!-- MESSAGE BOX -->
+    <div class="mt-4 bg-gradient-to-r from-pink-50 to-rose-100 border border-pink-200 rounded-2xl p-4 shadow fade-up">
+      <p class="text-sm text-gray-700 leading-relaxed">
+        haa lgbhag 18 ghnate beet gye hum wish nhi kiye… tum uddas hogi,
+        or haan gussa bhi justified hai… 🥺  
+        But aaj <span class="font-bold text-pink-600">tumhara day hai</span>.  
+        Tum ik ldki nhi... tum Priyu ho — jisse dekhkar sb ache lagne lagta hai.  
+        Sab kuch soft… warm… cute.  
+        And yes — Happy Princess Day ❤️👑👸🏻  
+      </p>
+    </div>
+
+    <!-- IMAGE SECTION WITH SLIDE LINK -->
+    <div class="mt-6">
+      <p class="text-xs text-gray-500 mb-2">Your photos ✨</p>
+
+      <a href="slideshow.html">
+        <div class="relative w-full h-40 rounded-2xl overflow-hidden shadow-lg active:scale-95 transition">
+          <img src="her1.jpeg" class="w-full h-full object-cover opacity-90">
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-white text-sm">
+            Tap to open slideshow →
+          </div>
+        </div>
+      </a>
+
+      <p class="text-[10px] text-gray-400 mt-1">Slideshow will open on next page</p>
+    </div>
+
+    <!-- SURPRISE BUTTON -->
+    <button id="surpriseBtn" class="mt-6 w-full bg-pink-600 text-white py-3 rounded-xl shadow-xl active:scale-95 transition-all 
+      text-sm font-semibold">
+      Tap for a Surprise ✨
+    </button>
+
+    <!-- HIDDEN WISH -->
+    <div id="hiddenWish" class="mt-5 fade translate-y-3">
+      <div class="bg-white border border-pink-200 p-4 rounded-2xl shadow fade-up">
+        <p class="text-center text-gray-700 text-sm leading-relaxed">
+          AAp bss ik princess nhi…  
+          meri calmness ho… comfort ho…  
+          meri sbse favorite insan ho.  
+          Mess-ups hote hai… but tumse pyaar krna kbhi nhi rukta.  
+          Happy Princess Day 💖
+        </p>
+      </div>
+
+      
+
+    <p class="mt-6 text-center text-xs text-gray-400">
+      Made for you, Princess ✨ — <span id="myName">Anurag</span>
+    </p>
+
+  </div>
+
+  <script>
+    document.getElementById("surpriseBtn").onclick = () => {
+      document.getElementById("hiddenWish").classList.add("show");
+    };
+
+    document.getElementById("callBtn").onclick = () => {
+      alert("Call me... I'm here 💗");
+    };
+
+    document.getElementById("myName").textContent = "Your Name"; 
+  </script>
+
+</body>
+</html>
